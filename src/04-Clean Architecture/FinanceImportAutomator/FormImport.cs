@@ -18,13 +18,13 @@ namespace CleanArchitectureFinanceImportAutomator
             InteractorSettings.ExecuteAspect = new LogAspect();
 
             //Injeção de dependência
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CleanArchitectureFinanceImportAutomator;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
             var sqlConnection = new SqlConnection(connectionString);
             
             _notification = new Notification();
 
             _importUseCase = new ImportUseCase(
-                new TransactionImportReader(_notification)
+                new FileReader(_notification)
                 , new GetCategoryByDescriptionQuery(sqlConnection)
                 , new SaveTransactionsOneToOneCommand(new InsertTransactionsCommand(sqlConnection))
                 , _notification

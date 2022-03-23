@@ -20,7 +20,7 @@ namespace ProceduralFinanceImportAutomator
             LogHelper.Log(LogType.Start, "Import init");
 
             // String de conexão com o banco de dados
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProceduralFinanceImportAutomator;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
 
             // Valida se o arquivo foi selecionado
             if (string.IsNullOrWhiteSpace(textBoxFilePath.Text))

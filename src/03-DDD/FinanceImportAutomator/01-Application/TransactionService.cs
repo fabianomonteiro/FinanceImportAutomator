@@ -1,6 +1,9 @@
 ﻿using DDDFinanceImportAutomator._02_Domain;
 using DDDFinanceImportAutomator._04_CrossCutting;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using Utilities;
 
 namespace DDDFinanceImportAutomator._01_Application
@@ -37,10 +40,37 @@ namespace DDDFinanceImportAutomator._01_Application
         {
             LogHelper.LogStart(nameof(ImportTransactions));
 
-            var transactions = _transactionInfraService.ReadTransactionsToImport(path);
+            var lines = _transactionInfraService.ReadTransactionsToImport(path);
+            var transactions = new List<Transaction>();
+
+            foreach (var line in lines)
+            {
+                var splitedLine = line.Split(';');
+                var date = DateTime.ParseExact(splitedLine[0], "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                var amount = decimal.Parse(splitedLine[2], CultureInfo.InvariantCulture);
+                var description = splitedLine[1];
+                var transactionType = splitedLine[3];
+                var accountName = splitedLine[4];
+
+                var transaction = Transaction.New(
+                    date
+                    , amount
+                    , description
+                    , transactionType
+                    , accountName);
+
+                transactions.Add(transaction);
+            }
 
             CategorizeTransactions(transactions);
             SaveTransactions(transactions);
+
+            if (transactions.Count() == 1)
+                _notification.AddNotification($"{transactions.Count()} transactions imported successfully.");
+            else if (transactions.Count() > 1)
+                _notification.AddNotification($"{transactions.Count()} transactions imported successfully.");
+            else
+                _notification.AddNotification($"No imported transactions.");
 
             LogHelper.LogEnd(nameof(ImportTransactions));
         }

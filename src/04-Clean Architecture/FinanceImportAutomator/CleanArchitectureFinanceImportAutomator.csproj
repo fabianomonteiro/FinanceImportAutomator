@@ -49,14 +49,14 @@
     <Compile Include="01-Application\IGetCategoryQuery.cs" />
     <Compile Include="01-Application\IInsertTransactionCommand.cs" />
     <Compile Include="01-Application\ImportUseCase.cs" />
-    <Compile Include="01-Application\ITransactionImportReader.cs" />
+    <Compile Include="01-Application\IFileReader.cs" />
     <Compile Include="02-Domain\Transaction.cs" />
     <Compile Include="03-Infra\DatabaseInteractor.cs" />
     <Compile Include="03-Infra\GetCategoryByDescriptionQuery.cs" />
     <Compile Include="03-Infra\InsertTransactionsCommand.cs" />
     <Compile Include="03-Infra\SaveTransactionsBulkCommand.cs" />
     <Compile Include="03-Infra\SaveTransactionsOneToOneCommand.cs" />
-    <Compile Include="03-Infra\TransactionImportReader.cs" />
+    <Compile Include="03-Infra\FileReader.cs" />
     <Compile Include="04-CrossCutting\ExecuteAspectBase.cs" />
     <Compile Include="04-CrossCutting\Interactor.cs" />
     <Compile Include="04-CrossCutting\Notification.cs" />

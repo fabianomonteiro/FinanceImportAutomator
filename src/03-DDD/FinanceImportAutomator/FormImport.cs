@@ -15,7 +15,7 @@ namespace DDDFinanceImportAutomator
         public FormImport()
         {
             //Injeção de dependências
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DDDFinanceImportAutomator;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
             var sqlConnection = new SqlConnection(connectionString);
 
             _notification = new Notification();

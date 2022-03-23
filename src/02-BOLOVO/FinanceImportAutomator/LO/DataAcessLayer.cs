@@ -7,7 +7,7 @@ namespace BOLOVOFinanceImportAutomator.LO
 {
     public static class DataAcessLayer
     {
-        static string _connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BOLOVOFinanceImportAutomator;Integrated Security=True";
+        static string _connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
         static SqlConnection _connection;
 
         static DataAcessLayer()

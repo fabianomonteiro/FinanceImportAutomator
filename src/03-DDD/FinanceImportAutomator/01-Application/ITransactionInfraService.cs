@@ -5,6 +5,6 @@ namespace DDDFinanceImportAutomator._01_Application
 {
     public interface ITransactionInfraService
     {
-        IEnumerable<Transaction> ReadTransactionsToImport(string path);
+        IEnumerable<string> ReadTransactionsToImport(string path);
     }
 }

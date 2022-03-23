@@ -12,13 +12,13 @@ namespace UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            var transactionImportReaderMock = new Mock<ITransactionImportReader>();
+            var fileReaderMock = new Mock<IFileReader>();
             var getCategoryByDescriptionQueryMock = new Mock<IGetCategoryByDescriptionQuery>();
             var saveTransactionsCommandMock = new Mock<ISaveTransactionsCommand>();
             var notification = new Notification();
 
             var importUseCase = new ImportUseCase(
-                transactionImportReaderMock.Object
+                fileReaderMock.Object
                 , getCategoryByDescriptionQueryMock.Object
                 , saveTransactionsCommandMock.Object
                 , notification);

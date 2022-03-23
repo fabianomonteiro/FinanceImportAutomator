@@ -1,26 +1,25 @@
-﻿using DDDFinanceImportAutomator._01_Application;
-using DDDFinanceImportAutomator._04_CrossCutting;
+﻿using CleanArchitectureFinanceImportAutomator._01_Application;
+using CleanArchitectureFinanceImportAutomator._04_CrossCutting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Utilities;
 
-namespace DDDFinanceImportAutomator._03_Infra
+namespace CleanArchitectureFinanceImportAutomator._03_Infra
 {
-    public class TransactionInfraService : ITransactionInfraService
+    public class FileReader : Interactor<string, IEnumerable<string>>, IFileReader
     {
+        public string Path => Input;
+
         private readonly INotification _notification;
 
-        public TransactionInfraService(INotification notification)
+        public FileReader(INotification notification)
         {
             _notification = notification;
         }
 
-        public IEnumerable<string> ReadTransactionsToImport(string path)
+        protected override IEnumerable<string> ImplementExecute(string input)
         {
-            LogHelper.LogStart(nameof(ReadTransactionsToImport));
-
             StreamReader streamReader = null;
             List<string> lines = new List<string>();
 
@@ -30,7 +29,7 @@ namespace DDDFinanceImportAutomator._03_Infra
                 string line;
 
                 // Lê o arquivo
-                streamReader = File.OpenText(path);
+                streamReader = File.OpenText(Path);
 
                 // Percorre o arquivo linha a linha
                 while ((line = streamReader.ReadLine()) != null)
@@ -48,20 +47,16 @@ namespace DDDFinanceImportAutomator._03_Infra
                     if (lineIndex == 0)
                         continue;
 
-                    lines.Add(line);
+                    lines.Add(line);                    
                 }
             }
             catch (Exception ex)
             {
-                LogHelper.LogError(nameof(ReadTransactionsToImport), ex);
-
                 _notification.AddNotification($"An unexpected error occurred in the application. Error: {ex.Message}");
             }
             finally
             {
                 streamReader?.Close();
-
-                LogHelper.LogEnd(nameof(ReadTransactionsToImport));
             }
 
             return lines;

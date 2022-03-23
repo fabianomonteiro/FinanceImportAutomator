@@ -4,5 +4,5 @@ using System.Collections.Generic;
 
 namespace CleanArchitectureFinanceImportAutomator._01_Application
 {
-    public interface ITransactionImportReader : IInteractor<string, IEnumerable<Transaction>> { }
+    public interface IFileReader : IInteractor<string, IEnumerable<string>> { }
 }
