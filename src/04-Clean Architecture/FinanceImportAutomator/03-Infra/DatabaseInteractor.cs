@@ -3,7 +3,7 @@ using System.Data.Common;
 
 namespace FinanceImportAutomator._03_Infra
 {
-    public static class DbParameterExtensions
+    public static class DbCommandExtensions
     {
         public static DbParameter CreateParameter(this DbCommand command, string parameterName, object value)
         {
@@ -30,9 +30,15 @@ namespace FinanceImportAutomator._03_Infra
 
         public override TOutput Execute(TInput input)
         {
+            Input = input;
+
             AddParameters(Command.Parameters);
 
-            return base.Execute(input);
+            var output = base.Execute(input);
+
+            Command = Connection.CreateCommand();
+
+            return output;
         }
 
         protected override void BeforeExecute()

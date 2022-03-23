@@ -2,7 +2,5 @@
 
 namespace FinanceImportAutomator._01_Application
 {
-    public interface IGetCategoryQuery : IInteractor<string, string>
-    {
-    }
+    public interface IGetCategoryByDescriptionQuery : IInteractor<string, string> { }
 }

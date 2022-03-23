@@ -4,5 +4,5 @@ using System.Collections.Generic;
 
 namespace FinanceImportAutomator._01_Application
 {
-    public interface ISaveTransactionsCommand : IInteractor<IEnumerable<Transaction>, VoidOutput> { }
+    public interface ITransactionImportReader : IInteractor<string, IEnumerable<Transaction>> { }
 }

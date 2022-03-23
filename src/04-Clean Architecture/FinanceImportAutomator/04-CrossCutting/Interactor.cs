@@ -7,11 +7,11 @@
 
     public class VoidOutput
     {
-        public static VoidOutput Instance { get; set; }
+        public static VoidOutput Empty { get; set; }
 
         static VoidOutput()
         {
-            Instance = new VoidOutput();
+            Empty = new VoidOutput();
         }
     }
 

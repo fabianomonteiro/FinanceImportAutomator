@@ -2,13 +2,19 @@
 using FinanceImportAutomator._02_Domain;
 using FinanceImportAutomator._04_CrossCutting;
 using System;
+using System.Collections.Generic;
 using System.Data.Common;
 
 namespace FinanceImportAutomator._03_Infra
 {
-    public class InsertTransactionCommand : DatabaseInteractor<Transaction, VoidOutput>, IInsertTransactionCommand
+    public interface IInsertTransactionCommand : IInteractor<Transaction, VoidOutput>
     {
-        public InsertTransactionCommand(DbConnection connection) : base(connection) { }
+
+    }
+
+    public class InsertTransactionsCommand : DatabaseInteractor<Transaction, VoidOutput>, IInsertTransactionCommand
+    {
+        public InsertTransactionsCommand(DbConnection connection) : base(connection) { }
 
         protected override VoidOutput ImplementExecute(Transaction input)
         {
@@ -30,7 +36,7 @@ namespace FinanceImportAutomator._03_Infra
 
             Command.ExecuteNonQuery();
 
-            return VoidOutput.Instance;
+            return VoidOutput.Empty;
         }
 
         protected override void AddParameters(DbParameterCollection parameters)
