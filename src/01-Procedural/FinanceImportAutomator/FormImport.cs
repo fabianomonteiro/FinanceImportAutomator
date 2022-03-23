@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Utilities;
 
-namespace FinanceImportAutomator
+namespace ProceduralFinanceImportAutomator
 {
     public partial class FormImport : System.Windows.Forms.Form
     {
@@ -20,7 +20,7 @@ namespace FinanceImportAutomator
             LogHelper.Log(LogType.Start, "Import init");
 
             // String de conexão com o banco de dados
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProceduralFinanceImportAutomator;Integrated Security=True";
 
             // Valida se o arquivo foi selecionado
             if (string.IsNullOrWhiteSpace(textBoxFilePath.Text))

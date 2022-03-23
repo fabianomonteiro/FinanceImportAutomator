@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FinanceImportAutomator.VO
+namespace BOLOVOFinanceImportAutomator.VO
 {
     public class TransactionVO
     {

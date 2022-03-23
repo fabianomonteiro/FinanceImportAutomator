@@ -1,8 +1,8 @@
-﻿using FinanceImportAutomator._01_Application;
+﻿using CleanArchitectureFinanceImportAutomator._01_Application;
 using System;
 using System.Data.Common;
 
-namespace FinanceImportAutomator._03_Infra
+namespace CleanArchitectureFinanceImportAutomator._03_Infra
 {
     public class GetCategoryByDescriptionQuery : DatabaseInteractor<string, string>, IGetCategoryByDescriptionQuery
     {

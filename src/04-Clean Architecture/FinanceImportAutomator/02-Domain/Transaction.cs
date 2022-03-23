@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FinanceImportAutomator._02_Domain
+namespace CleanArchitectureFinanceImportAutomator._02_Domain
 {
     public class Transaction
     {

@@ -1,4 +1,4 @@
-﻿namespace FinanceImportAutomator
+﻿namespace BOLOVOFinanceImportAutomator
 {
     partial class FormImport
     {
@@ -86,7 +86,7 @@
             this.Controls.Add(this.buttonImport);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormImport";
-            this.Text = "FinanceImportAutomator";
+            this.Text = "BOLOVOFinanceImportAutomator";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 
-namespace FinanceImportAutomator._03_Infra
+namespace DDDFinanceImportAutomator._03_Infra
 {
     public static class DbCommandExtensions
     {

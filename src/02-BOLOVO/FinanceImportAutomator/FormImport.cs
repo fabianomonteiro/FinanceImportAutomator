@@ -1,8 +1,8 @@
-﻿using FinanceImportAutomator.BO;
+﻿using BOLOVOFinanceImportAutomator.BO;
 using System;
 using System.Windows.Forms;
 
-namespace FinanceImportAutomator
+namespace BOLOVOFinanceImportAutomator
 {
     public partial class FormImport : System.Windows.Forms.Form
     {

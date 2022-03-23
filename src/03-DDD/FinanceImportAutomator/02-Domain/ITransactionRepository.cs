@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FinanceImportAutomator._02_Domain
+namespace DDDFinanceImportAutomator._02_Domain
 {
     public interface ITransactionRepository
     {

@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Clean Architecture", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - BOLOVO", "02 - BOLOVO", "{282CC3E8-CEC2-4EE0-81BC-4C75B110EFA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceImportAutomator", "01-Procedural\FinanceImportAutomator\FinanceImportAutomator.csproj", "{14CB6540-A99E-4996-8841-AC07935F2830}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProceduralFinanceImportAutomator", "01-Procedural\FinanceImportAutomator\ProceduralFinanceImportAutomator.csproj", "{14CB6540-A99E-4996-8841-AC07935F2830}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceImportAutomator", "02-BOLOVO\FinanceImportAutomator\FinanceImportAutomator.csproj", "{BC976EAB-CE3C-4944-8F00-0C76D631C304}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOLOVOFinanceImportAutomator", "02-BOLOVO\FinanceImportAutomator\BOLOVOFinanceImportAutomator.csproj", "{BC976EAB-CE3C-4944-8F00-0C76D631C304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceImportAutomator", "03-DDD\FinanceImportAutomator\FinanceImportAutomator.csproj", "{5F8C5255-0A81-4CD6-9A79-16595362CF03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDFinanceImportAutomator", "03-DDD\FinanceImportAutomator\DDDFinanceImportAutomator.csproj", "{5F8C5255-0A81-4CD6-9A79-16595362CF03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceImportAutomator", "04-Clean Architecture\FinanceImportAutomator\FinanceImportAutomator.csproj", "{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureFinanceImportAutomator", "04-Clean Architecture\FinanceImportAutomator\CleanArchitectureFinanceImportAutomator.csproj", "{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{96D24165-656E-41FB-B1C2-763D636C860D}"
 EndProject

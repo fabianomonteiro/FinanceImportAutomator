@@ -1,11 +1,11 @@
-﻿using FinanceImportAutomator._01_Application;
-using FinanceImportAutomator._03_Infra;
-using FinanceImportAutomator._04_CrossCutting;
+﻿using CleanArchitectureFinanceImportAutomator._01_Application;
+using CleanArchitectureFinanceImportAutomator._03_Infra;
+using CleanArchitectureFinanceImportAutomator._04_CrossCutting;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace FinanceImportAutomator
+namespace CleanArchitectureFinanceImportAutomator
 {
     public partial class FormImport : Form
     {
@@ -18,7 +18,7 @@ namespace FinanceImportAutomator
             InteractorSettings.ExecuteAspect = new LogAspect();
 
             //Injeção de dependência
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CleanArchitectureFinanceImportAutomator;Integrated Security=True";
             var sqlConnection = new SqlConnection(connectionString);
             
             _notification = new Notification();

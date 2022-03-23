@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace FinanceImportAutomator._04_CrossCutting
+namespace DDDFinanceImportAutomator._04_CrossCutting
 {
     public interface INotification
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FinanceImportAutomator._04_CrossCutting
+namespace CleanArchitectureFinanceImportAutomator._04_CrossCutting
 {
     public interface IInteractor<TInput, TOutput>
     {

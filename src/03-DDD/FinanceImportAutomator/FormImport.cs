@@ -1,11 +1,11 @@
-﻿using FinanceImportAutomator._01_Application;
-using FinanceImportAutomator._03_Infra;
-using FinanceImportAutomator._04_CrossCutting;
+﻿using DDDFinanceImportAutomator._01_Application;
+using DDDFinanceImportAutomator._03_Infra;
+using DDDFinanceImportAutomator._04_CrossCutting;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace FinanceImportAutomator
+namespace DDDFinanceImportAutomator
 {
     public partial class FormImport : Form
     {
@@ -15,13 +15,14 @@ namespace FinanceImportAutomator
         public FormImport()
         {
             //Injeção de dependências
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DDDFinanceImportAutomator;Integrated Security=True";
             var sqlConnection = new SqlConnection(connectionString);
 
             _notification = new Notification();
 
             _transactionService = new TransactionService(
-                new CategorizeRepository(sqlConnection)
+                new TransactionReaderService(_notification)
+                , new CategorizeRepository(sqlConnection)
                 , new TransactionRepository(sqlConnection)
                 , _notification);
 

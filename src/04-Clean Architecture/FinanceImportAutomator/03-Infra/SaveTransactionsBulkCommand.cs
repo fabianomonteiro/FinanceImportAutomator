@@ -1,11 +1,11 @@
-﻿using FinanceImportAutomator._01_Application;
-using FinanceImportAutomator._02_Domain;
-using FinanceImportAutomator._04_CrossCutting;
+﻿using CleanArchitectureFinanceImportAutomator._01_Application;
+using CleanArchitectureFinanceImportAutomator._02_Domain;
+using CleanArchitectureFinanceImportAutomator._04_CrossCutting;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
 
-namespace FinanceImportAutomator._03_Infra
+namespace CleanArchitectureFinanceImportAutomator._03_Infra
 {
     public class SaveTransactionsBulkCommand : 
         DatabaseInteractor<IEnumerable<Transaction>, VoidOutput>, 

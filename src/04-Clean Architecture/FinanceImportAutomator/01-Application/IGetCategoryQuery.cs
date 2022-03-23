@@ -1,6 +1,6 @@
-﻿using FinanceImportAutomator._04_CrossCutting;
+﻿using CleanArchitectureFinanceImportAutomator._04_CrossCutting;
 
-namespace FinanceImportAutomator._01_Application
+namespace CleanArchitectureFinanceImportAutomator._01_Application
 {
     public interface IGetCategoryByDescriptionQuery : IInteractor<string, string> { }
 }

@@ -1,10 +1,10 @@
-﻿using FinanceImportAutomator._02_Domain;
+﻿using DDDFinanceImportAutomator._02_Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using Utilities;
 
-namespace FinanceImportAutomator._03_Infra
+namespace DDDFinanceImportAutomator._03_Infra
 {
     public class TransactionRepository : RepositoryBase, ITransactionRepository
     {

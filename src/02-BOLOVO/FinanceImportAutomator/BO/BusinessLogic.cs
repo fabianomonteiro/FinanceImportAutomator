@@ -1,5 +1,5 @@
-﻿using FinanceImportAutomator.LO;
-using FinanceImportAutomator.VO;
+﻿using BOLOVOFinanceImportAutomator.LO;
+using BOLOVOFinanceImportAutomator.VO;
 using System;
 using System.Globalization;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Utilities;
 
-namespace FinanceImportAutomator.BO
+namespace BOLOVOFinanceImportAutomator.BO
 {
     public static class BusinessLogic
     {

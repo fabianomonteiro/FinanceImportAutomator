@@ -1,7 +1,7 @@
-﻿using FinanceImportAutomator._04_CrossCutting;
+﻿using CleanArchitectureFinanceImportAutomator._04_CrossCutting;
 using System.Data.Common;
 
-namespace FinanceImportAutomator._03_Infra
+namespace CleanArchitectureFinanceImportAutomator._03_Infra
 {
     public static class DbCommandExtensions
     {

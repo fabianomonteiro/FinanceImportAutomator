@@ -1,8 +1,8 @@
-﻿using FinanceImportAutomator._04_CrossCutting;
+﻿using CleanArchitectureFinanceImportAutomator._04_CrossCutting;
 using System;
 using Utilities;
 
-namespace FinanceImportAutomator
+namespace CleanArchitectureFinanceImportAutomator
 {
     public class LogAspect : ExecuteAspectBase
     {
