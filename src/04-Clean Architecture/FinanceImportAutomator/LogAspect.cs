@@ -8,12 +8,12 @@ namespace FinanceImportAutomator
     {
         public override void Start(string typeName, object input)
         {
-            LogHelper.LogStart(typeName);
+            LogHelper.LogStart(typeName, $"Input={input}");
         }
 
         public override void End(string typeName, object input, object output, TimeSpan executionTime)
         {
-            LogHelper.LogEnd(typeName);
+            LogHelper.LogEnd(typeName, $"Input={input}", $"Output={output?.ToString()}", $"ExecutionTime={executionTime}");
         }
 
         public override void Error(string typeName, object input, object output, Exception exception)

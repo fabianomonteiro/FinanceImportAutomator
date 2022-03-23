@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Text;
 
 namespace Utilities
 {
@@ -17,21 +18,21 @@ namespace Utilities
 
     public static class LogHelper
     {
-        public static void Log(LogType logType, string logDescription)
+        public static void Log(LogType logType, string logDescription, params string[] args)
         {
-            var line = GetLog(logType, logDescription);
-            
+            var line = GetLog(logType, logDescription, args);
+
             WriteLog(line);
         }
 
-        public static void LogStart(string logDescription)
+        public static void LogStart(string logDescription, params string[] args)
         {
-            Log(LogType.Start, logDescription);
+            Log(LogType.Start, logDescription, args);
         }
 
-        public static void LogEnd(string logDescription)
+        public static void LogEnd(string logDescription, params string[] args)
         {
-            Log(LogType.End, logDescription);
+            Log(LogType.End, logDescription, args);
         }
 
         public static void LogError(string logDescription, Exception exception)
@@ -51,9 +52,19 @@ namespace Utilities
             File.AppendAllText(file, line + Environment.NewLine);
         }
 
-        private static string GetLog(LogType logType, string logDescription)
+        private static string GetLog(LogType logType, string logDescription, params string[] args)
         {
-            return $"{DateTime.Now}|{logType}|{logDescription}";
+            StringBuilder stringBuilder = new StringBuilder($"{DateTime.Now}|{logType}|{logDescription}");
+
+            if (args != null)
+            {
+                foreach (var item in args)
+                {
+                    stringBuilder.Append($"|{item}");
+                }
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }
