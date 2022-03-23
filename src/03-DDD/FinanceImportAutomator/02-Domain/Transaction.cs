@@ -1,12 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinanceImportAutomator._02_Domain
 {
-    internal class Transaction
+    public class Transaction
     {
+        public DateTime Date { get; set; }
+        public decimal Amount { get; set; }
+        public string Description { get; set; }
+        public string TransactionType { get; set; }
+        public string AccountName { get; set; }
+        public string Category { get; set; }
+
+        protected Transaction() { }
+
+        public static Transaction New(
+            DateTime date
+            , decimal amount
+            , string description
+            , string transactionType
+            , string accountName)
+        {
+            var transaction = new Transaction();
+
+            transaction.Date = date;
+            transaction.Amount = amount;
+            transaction.Description = description;  
+            transaction.TransactionType = transactionType;  
+            transaction.AccountName = accountName;
+
+            return transaction;
+        }
     }
 }

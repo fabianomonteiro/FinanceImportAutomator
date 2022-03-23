@@ -46,10 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="01-Application\IGetCategoryQuery.cs" />
+    <Compile Include="01-Application\IInsertTransactionCommand.cs" />
     <Compile Include="01-Application\ImportUseCase.cs" />
+    <Compile Include="02-Domain\Categorize.cs" />
     <Compile Include="02-Domain\Transaction.cs" />
+    <Compile Include="03-Infra\DatabaseInteractor.cs" />
     <Compile Include="03-Infra\GetCategoryQuery.cs" />
     <Compile Include="03-Infra\InsertTransactionCommand.cs" />
+    <Compile Include="04-CrossCutting\Interactor.cs" />
     <Compile Include="FormImport.cs">
       <SubType>Form</SubType>
     </Compile>

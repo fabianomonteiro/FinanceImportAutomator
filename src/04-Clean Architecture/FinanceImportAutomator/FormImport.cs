@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FinanceImportAutomator._01_Application;
+using FinanceImportAutomator._03_Infra;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -9,15 +11,27 @@ namespace FinanceImportAutomator
 {
     public partial class FormImport : System.Windows.Forms.Form
     {
+        private readonly IImportUseCase _importUseCase;
+
         public FormImport()
         {
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
+            var sqlConnection = new SqlConnection(connectionString);
+
+            _importUseCase = new ImportUseCase(
+                new GetCategoryQuery(sqlConnection)
+                , new InsertTransactionCommand(sqlConnection)
+                );
+
             InitializeComponent();
         }
 
         private void buttonImport_Click(object sender, EventArgs e)
         {
+            _importUseCase.Execute(textBoxFilePath.Text);
+
             // String de conexão com o banco de dados
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
+            
 
             // Valida se o arquivo foi selecionado
             if (string.IsNullOrWhiteSpace(textBoxFilePath.Text))
