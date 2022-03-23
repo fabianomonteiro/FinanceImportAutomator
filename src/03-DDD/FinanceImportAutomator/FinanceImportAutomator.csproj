@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="01-Application\TransactionService.cs" />
+    <Compile Include="02-Domain\Transaction.cs" />
+    <Compile Include="03-Infra\TransactionRepository.cs" />
     <Compile Include="FormImport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,10 +82,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="01-Application\" />
-    <Folder Include="02-Domain\" />
-    <Folder Include="03-Infra\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
