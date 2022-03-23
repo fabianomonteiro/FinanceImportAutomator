@@ -10,7 +10,7 @@ namespace FinanceImportAutomator
     public partial class FormImport : Form
     {
         private readonly IImportUseCase _importUseCase;
-        private readonly Notification _notification;
+        private readonly INotification _notification;
 
         public FormImport()
         {

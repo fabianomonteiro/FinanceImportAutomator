@@ -20,12 +20,21 @@ namespace FinanceImportAutomator._02_Domain
             , string transactionType
             , string accountName)
         {
+            if (string.IsNullOrWhiteSpace(description))
+                throw new ArgumentNullException("description");
+
+            if (string.IsNullOrWhiteSpace(transactionType))
+                throw new ArgumentNullException("transactionType");
+
+            if (string.IsNullOrWhiteSpace(accountName))
+                throw new ArgumentNullException("accountName");
+
             var transaction = new Transaction();
 
             transaction.Date = date;
             transaction.Amount = amount;
-            transaction.Description = description;  
-            transaction.TransactionType = transactionType;  
+            transaction.Description = description;
+            transaction.TransactionType = transactionType;
             transaction.AccountName = accountName;
 
             return transaction;
