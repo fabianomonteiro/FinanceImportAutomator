@@ -1,10 +1,6 @@
 ﻿using DDDFinanceImportAutomator._02_Domain;
 using DDDFinanceImportAutomator._04_CrossCutting;
-using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 using Utilities;
 
 namespace DDDFinanceImportAutomator._01_Application
@@ -20,18 +16,18 @@ namespace DDDFinanceImportAutomator._01_Application
 
     public class TransactionService : ITransactionService
     {
-        private readonly ITransactionReaderService _transactionReaderService; 
+        private readonly ITransactionInfraService _transactionInfraService; 
         private readonly ICategorizeRepository _categorizeRepository;
         private readonly ITransactionRepository _transactionRepository;
         private readonly INotification _notification;
 
         public TransactionService(
-            ITransactionReaderService transactionReaderService
+            ITransactionInfraService transactionInfraService
             , ICategorizeRepository categorizeRepository
             , ITransactionRepository transactionRepository
             , INotification notification)
         {
-            _transactionReaderService = transactionReaderService;
+            _transactionInfraService = transactionInfraService;
             _categorizeRepository = categorizeRepository;   
             _transactionRepository = transactionRepository;
             _notification = notification;
@@ -41,7 +37,7 @@ namespace DDDFinanceImportAutomator._01_Application
         {
             LogHelper.LogStart(nameof(ImportTransactions));
 
-            var transactions = _transactionReaderService.ReadTransactionsToImport(path);
+            var transactions = _transactionInfraService.ReadTransactionsToImport(path);
 
             CategorizeTransactions(transactions);
             SaveTransactions(transactions);

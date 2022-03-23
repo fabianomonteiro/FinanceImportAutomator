@@ -46,14 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="01-Application\ITransactionReaderService.cs" />
+    <Compile Include="01-Application\ITransactionInfraService.cs" />
     <Compile Include="01-Application\TransactionService.cs" />
     <Compile Include="02-Domain\Categorize.cs" />
     <Compile Include="02-Domain\ICategorizeRepository.cs" />
     <Compile Include="02-Domain\Transaction.cs" />
     <Compile Include="03-Infra\CategorizeRepository.cs" />
     <Compile Include="02-Domain\ITransactionRepository.cs" />
-    <Compile Include="03-Infra\TransactionReaderService.cs" />
+    <Compile Include="03-Infra\TransactionInfraService.cs" />
     <Compile Include="03-Infra\RepositoryBase.cs" />
     <Compile Include="03-Infra\TransactionRepository.cs" />
     <Compile Include="04-CrossCutting\Notification.cs" />

@@ -84,6 +84,10 @@
       <Project>{5F8C5255-0A81-4CD6-9A79-16595362CF03}</Project>
       <Name>DDDFinanceImportAutomator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\04-Clean Architecture\FinanceImportAutomator\CleanArchitectureFinanceImportAutomator.csproj">
+      <Project>{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}</Project>
+      <Name>CleanArchitectureFinanceImportAutomator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,11 +10,11 @@ using Utilities;
 
 namespace DDDFinanceImportAutomator._03_Infra
 {
-    public class TransactionReaderService : ITransactionReaderService
+    public class TransactionInfraService : ITransactionInfraService
     {
         private readonly INotification _notification;
 
-        public TransactionReaderService(INotification notification)
+        public TransactionInfraService(INotification notification)
         {
             _notification = notification;
         }

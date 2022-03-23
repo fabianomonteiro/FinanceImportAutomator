@@ -15,11 +15,11 @@ namespace UnitTest
         {
             var categorizeRepositoryMock = new Mock<ICategorizeRepository>();
             var transactionRepositoryMock = new Mock<ITransactionRepository>();
-            var transactionReaderServiceMock = new Mock<ITransactionReaderService>();
+            var transactionInfraServiceMock = new Mock<ITransactionInfraService>();
             var notification = new Notification();
 
             var transactionService = new TransactionService(
-                transactionReaderServiceMock.Object
+                transactionInfraServiceMock.Object
                 , categorizeRepositoryMock.Object
                 , transactionRepositoryMock.Object
                 , notification);

@@ -21,7 +21,7 @@ namespace DDDFinanceImportAutomator
             _notification = new Notification();
 
             _transactionService = new TransactionService(
-                new TransactionReaderService(_notification)
+                new TransactionInfraService(_notification)
                 , new CategorizeRepository(sqlConnection)
                 , new TransactionRepository(sqlConnection)
                 , _notification);
