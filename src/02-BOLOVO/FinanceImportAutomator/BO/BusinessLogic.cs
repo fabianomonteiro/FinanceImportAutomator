@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Utilities;
 
 namespace FinanceImportAutomator.BO
 {
@@ -12,6 +13,8 @@ namespace FinanceImportAutomator.BO
     {
         public static void ImportFile(string path)
         {
+            LogHelper.LogStart(nameof(ImportFile));
+
             StreamReader streamReader = null;
 
             try
@@ -58,11 +61,15 @@ namespace FinanceImportAutomator.BO
             }
             catch (Exception ex)
             {
+                LogHelper.LogError(nameof(ImportFile), ex);
+
                 MessageBox.Show($"An unexpected error occurred in the application. Error: {ex.Message}");
             }
             finally
             {
                 streamReader?.Close();
+
+                LogHelper.LogEnd(nameof(ImportFile));
             }
         }
 

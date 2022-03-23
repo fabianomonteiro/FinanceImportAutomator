@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceImportAutomator", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceImportAutomator", "04-Clean Architecture\FinanceImportAutomator\FinanceImportAutomator.csproj", "{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{96D24165-656E-41FB-B1C2-763D636C860D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{CD0DDA04-26CE-4246-95DE-10378FF53A51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD0DDA04-26CE-4246-95DE-10378FF53A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0DDA04-26CE-4246-95DE-10378FF53A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0DDA04-26CE-4246-95DE-10378FF53A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0DDA04-26CE-4246-95DE-10378FF53A51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +69,7 @@ Global
 		{BC976EAB-CE3C-4944-8F00-0C76D631C304} = {282CC3E8-CEC2-4EE0-81BC-4C75B110EFA0}
 		{5F8C5255-0A81-4CD6-9A79-16595362CF03} = {C2F3527C-3B67-4A3E-8AED-9E18AA88AFEE}
 		{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8} = {98D7ECD0-9BF5-4304-8539-67570D1E0F89}
+		{CD0DDA04-26CE-4246-95DE-10378FF53A51} = {96D24165-656E-41FB-B1C2-763D636C860D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5A3F944-3A22-49F2-A05D-AF4E2CC59B84}

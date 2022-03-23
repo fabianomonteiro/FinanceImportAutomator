@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Utilities;
 
 namespace FinanceImportAutomator
 {
@@ -115,6 +116,7 @@ namespace FinanceImportAutomator
             catch (Exception ex)
             {
                 LogHelper.Log(LogType.Error, $"Error: {ex.Message}");
+
                 MessageBox.Show($"An unexpected error occurred in the application. Error: {ex.Message}");
             }
             finally

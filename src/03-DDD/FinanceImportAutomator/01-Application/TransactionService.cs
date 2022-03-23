@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Utilities;
 
 namespace FinanceImportAutomator._01_Application
 {
@@ -37,14 +38,20 @@ namespace FinanceImportAutomator._01_Application
 
         public void ImportTransactions(string path)
         {
+            LogHelper.LogStart(nameof(ImportTransactions));
+
             var transactions = ReadTransactionsToImport(path);
 
             CategorizeTransactions(transactions);
             SaveTransactions(transactions);
+
+            LogHelper.LogEnd(nameof(ImportTransactions));
         }
 
         public IEnumerable<Transaction> ReadTransactionsToImport(string path)
         {
+            LogHelper.LogStart(nameof(ReadTransactionsToImport));
+
             StreamReader streamReader = null;
             List<Transaction> transactions = new List<Transaction>();
 
@@ -101,11 +108,15 @@ namespace FinanceImportAutomator._01_Application
             }
             catch (Exception ex)
             {
+                LogHelper.LogError(nameof(ReadTransactionsToImport), ex);
+
                 _notification.AddNotification($"An unexpected error occurred in the application. Error: {ex.Message}");
             }
             finally
             {
                 streamReader?.Close();
+
+                LogHelper.LogEnd(nameof(ReadTransactionsToImport));
             }
 
             return transactions;
@@ -113,20 +124,28 @@ namespace FinanceImportAutomator._01_Application
 
         public void CategorizeTransactions(IEnumerable<Transaction> transactions)
         {
+            LogHelper.LogStart(nameof(CategorizeTransactions));
+
             foreach (var transaction in transactions)
             {
                 var category = _categorizeRepository.GetCategoryByDescription(transaction.Description);
 
                 transaction.Category = category;
             }
+
+            LogHelper.LogEnd(nameof(CategorizeTransactions));
         }
 
         public void SaveTransactions(IEnumerable<Transaction> transactions)
         {
+            LogHelper.LogStart(nameof(SaveTransactions));
+
             foreach (var transaction in transactions)
             {
                 _transactionRepository.InsertTransaction(transaction);
             }
+
+            LogHelper.LogEnd(nameof(SaveTransactions));
         }
     }
 }

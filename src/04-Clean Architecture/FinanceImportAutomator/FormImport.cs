@@ -14,6 +14,9 @@ namespace FinanceImportAutomator
 
         public FormImport()
         {
+            //Aspect Oriented Programming
+            InteractorSettings.ExecuteAspect = new LogAspect();
+
             //Injeção de dependência
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FinanceImportAutomator;Integrated Security=True";
             var sqlConnection = new SqlConnection(connectionString);

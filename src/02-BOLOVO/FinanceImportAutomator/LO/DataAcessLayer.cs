@@ -1,6 +1,7 @@
 ﻿using FinanceImportAutomator.VO;
 using System;
 using System.Data.SqlClient;
+using Utilities;
 
 namespace FinanceImportAutomator.LO
 {
@@ -16,6 +17,8 @@ namespace FinanceImportAutomator.LO
 
         public static string GetCategory(string description)
         {
+            LogHelper.LogStart(nameof(GetCategory));
+
             _connection.Open();
 
             try
@@ -31,17 +34,25 @@ namespace FinanceImportAutomator.LO
 
                 if (value != null)
                     return value.ToString();
-
-                return null;
+            }
+            catch(Exception ex)
+            {
+                LogHelper.LogError(nameof(GetCategory), ex);
             }
             finally
             {
                 _connection.Close();
+
+                LogHelper.LogEnd(nameof(GetCategory));
             }
+
+            return null;
         }
 
         public static void InsertTransaction(TransactionVO transaction)
         {
+            LogHelper.LogStart(nameof(InsertTransaction));
+
             _connection.Open();
 
             try
@@ -76,9 +87,15 @@ namespace FinanceImportAutomator.LO
 
                 command.ExecuteNonQuery();
             }
+            catch (Exception ex)
+            {
+                LogHelper.LogError(nameof(InsertTransaction), ex);
+            }
             finally
             {
                 _connection.Close();
+
+                LogHelper.LogEnd(nameof(InsertTransaction));
             }
         }
     }

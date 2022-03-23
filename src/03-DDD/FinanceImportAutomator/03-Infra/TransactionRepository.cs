@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using Utilities;
 
 namespace FinanceImportAutomator._03_Infra
 {
@@ -11,6 +12,8 @@ namespace FinanceImportAutomator._03_Infra
 
         public void InsertTransaction(Transaction transaction)
         {
+            LogHelper.LogStart(nameof(InsertTransaction));
+
             Connection.Open();
 
             try
@@ -45,9 +48,15 @@ namespace FinanceImportAutomator._03_Infra
 
                 command.ExecuteNonQuery();
             }
+            catch(Exception ex)
+            {
+                LogHelper.LogError(nameof(InsertTransaction), ex);
+            }
             finally
             {
                 Connection.Close();
+
+                LogHelper.LogEnd(nameof(InsertTransaction));
             }
         }
 

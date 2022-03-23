@@ -1,5 +1,7 @@
 ﻿using FinanceImportAutomator._02_Domain;
+using System;
 using System.Data.Common;
+using Utilities;
 
 namespace FinanceImportAutomator._03_Infra
 {
@@ -9,6 +11,8 @@ namespace FinanceImportAutomator._03_Infra
 
         public string GetCategoryByDescription(string description)
         {
+            LogHelper.LogStart(nameof(GetCategoryByDescription));
+
             Connection.Open();
 
             try
@@ -24,13 +28,19 @@ namespace FinanceImportAutomator._03_Infra
 
                 if (value != null)
                     return value.ToString();
-
-                return null;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogError(nameof(GetCategoryByDescription), ex);
             }
             finally
             {
                 Connection.Close();
+
+                LogHelper.LogEnd(nameof(GetCategoryByDescription));
             }
+
+            return null;
         }
     }
 }

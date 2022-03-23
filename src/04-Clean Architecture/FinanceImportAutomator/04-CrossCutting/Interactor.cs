@@ -1,4 +1,6 @@
-﻿namespace FinanceImportAutomator._04_CrossCutting
+﻿using System;
+
+namespace FinanceImportAutomator._04_CrossCutting
 {
     public interface IInteractor<TInput, TOutput>
     {
@@ -13,6 +15,11 @@
         {
             Empty = new VoidOutput();
         }
+    }
+
+    public static class InteractorSettings
+    {
+        public static ExecuteAspectBase ExecuteAspect { get; set; }
     }
 
     public abstract class Interactor<TInput, TOutput> : IInteractor<TInput, TOutput>
@@ -31,12 +38,24 @@
             {
                 BeforeExecute();
 
+                DateTime start = DateTime.Now;
+
+                InteractorSettings.ExecuteAspect?.Start(this.GetType().FullName, input);
+
                 Output = ImplementExecute(input);
+
+                DateTime end = DateTime.Now;
+
+                var timeSpan = end.Subtract(start);
+
+                InteractorSettings.ExecuteAspect?.End(this.GetType().FullName, input, Output, timeSpan);
 
                 AfterExecute();
             }
-            catch
+            catch (Exception ex)
             {
+                InteractorSettings.ExecuteAspect?.Error(this.GetType().FullName, input, Output, ex);
+
                 throw;
             }
             finally
