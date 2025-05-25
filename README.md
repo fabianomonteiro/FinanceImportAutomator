@@ -110,9 +110,9 @@ Ao longo das diferentes arquiteturas, os seguintes conceitos são progressivamen
 ## Referências
 
 - [BOLOVO - Você conhece esse modelo de arquitetura de software?](https://medium.com/codigorefinado/bolovo-voc%C3%AA-conhece-esse-modelo-de-arquitetura-de-software-1590c778f394)
-- [Clean Architecture - FabianOMonteiro](https://github.com/fabianomonteiro/CleanArchitecture)
+- [Clean Architecture - FabianoMonteiro](https://github.com/fabianomonteiro/CleanArchitecture)
 - [Clean Architecture Manga - Ivan Paulovich](https://github.com/ivanpaulovich/clean-architecture-manga)
-- [Aspect Oriented Programming - FabianOMonteiro](https://github.com/fabianomonteiro/AspectOrientedProgramming)
-- [FluentInteract - FabianOMonteiro](https://github.com/fabianomonteiro/FluentInteract)
+- [Aspect Oriented Programming - FabianoMonteiro](https://github.com/fabianomonteiro/AspectOrientedProgramming)
+- [FluentInteract - FabianoMonteiro](https://github.com/fabianomonteiro/FluentInteract)
 
 Este projeto serve como um guia prático para entender a transição e os benefícios de arquiteturas de software mais modernas e robustas.
