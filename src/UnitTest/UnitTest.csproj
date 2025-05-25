@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7640B84-2C7A-4095-8CBF-88335EA8BA3B}</ProjectGuid>
+    <ProjectGuid>{A1B2C3D4-E5F6-4A7B-8C9D-0E1F2A3B4C5D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTest</RootNamespace>
@@ -66,6 +66,7 @@
     <Compile Include="02-BOLOVO\BOLOVOUnitTest.cs" />
     <Compile Include="03-DDD\DDDUnitTest.cs" />
     <Compile Include="04-CleanArchitecture\CleanArchitectureUnitTest.cs" />
+    <Compile Include="05-Hexagonal\HexagonalUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +88,13 @@
     <ProjectReference Include="..\04-Clean Architecture\FinanceImportAutomator\CleanArchitectureFinanceImportAutomator.csproj">
       <Project>{0B0D8422-0E1B-45B5-BF64-FD2ED693E9A8}</Project>
       <Name>CleanArchitectureFinanceImportAutomator</Name>
+    </ProjectReference>    <ProjectReference Include="..\05-Hexagonal\FinanceImportAutomator\HexagonalFinanceImportAutomator.csproj">
+      <Project>{A1B2C3D4-E5F6-4A7B-8C9D-0E1F2A3B4C5D}</Project>
+      <Name>HexagonalFinanceImportAutomator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{CD0DDA04-26CE-4246-95DE-10378FF53A51}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
